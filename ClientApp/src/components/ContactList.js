@@ -57,7 +57,7 @@ class ContactList extends Component {
     addNew() {
         this.newContact = true;
         this.setState({
-            contact: { firstName: '', lastName: '', email: '', phone: '' },
+            contact: { firstName: '', lastName: '', email: '', phone: '', address: '' },
             displayDialog: true
         });
     }
@@ -97,6 +97,7 @@ class ContactList extends Component {
                     <Column field="lastName" header="LastName" />
                     <Column field="email" header="Email" />
                     <Column field="phone" header="Phone" />
+                    <Column field="address" header="Address" />
                 </DataTable>
                 <Dialog visible={this.state.displayDialog} style={{ 'width': '380px' }} header="Contact Details" modal={true} footer={dialogFooter} onHide={() => this.setState({ displayDialog: false })}>
                     {
@@ -123,6 +124,12 @@ class ContactList extends Component {
                             <div>
                                 <InputText id="phone" onChange={(e) => { this.updateProperty('phone', e.target.value) }} value={this.state.contact.phone} />
                             </div>
+
+                            <div style={{ paddingTop: '10px' }}><label htmlFor="lastName">Address</label></div>
+                            <div>
+                                <InputText id="address" onChange={(e) => { this.updateProperty('address', e.target.value) }} value={this.state.contact.address} />
+                            </div>
+
                         </div>
                     }
                 </Dialog>

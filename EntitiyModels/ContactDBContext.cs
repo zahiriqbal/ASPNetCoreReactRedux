@@ -39,6 +39,8 @@ namespace AspNetCoreReactRedux.EntitiyModels
                 entity.Property(e => e.LastName).HasMaxLength(50);
 
                 entity.Property(e => e.Phone).HasMaxLength(50);
+
+                entity.Property(e => e.Address).HasMaxLength(500);
             });
         }
     }
